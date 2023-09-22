@@ -56,7 +56,7 @@ public class Pizza {
         totalPrice+=20;
     }
     public void setBill() {
-        this.bill+="Base Price of the Pizza: "+getPrice()+"\n";
+        this.bill+="Base Price Of the Pizza: "+getPrice()+"\n";
         if(cheesePrice >0)
             this.bill+="Extra Cheese Added: "+cheesePrice+"\n";
         if(toppingPrice >0)
