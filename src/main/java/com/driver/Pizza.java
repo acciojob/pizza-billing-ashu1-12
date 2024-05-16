@@ -11,29 +11,29 @@ public class Pizza {
 		this.isVeg = isVeg;
 	}
 
-	protected void addExtraCheese() {
+	public void addExtraCheese() {
 		this.isCheeseAdded = 80;
 	}
 
-	protected void addExtraToppings() {
+	public void addExtraToppings() {
 		if (isVeg)
 			this.isToppingsAdded = 70;
 		else
 			this.isToppingsAdded = 120;
 	}
 
-	protected int addTakeaway() {
+	public int addTakeaway() {
 		return this.isPaperBagAdded += 20;
 	}
 	
-	protected int getPrice() {
+	public int getPrice() {
 		if(isVeg)
 			return 300;
 		else
 			return 400;
 	}
 
-	protected String getBill() {
+	public String getBill() {
 		this.totalPrice = 0;
 		StringBuffer bill = new StringBuffer();
 		//bill.append("------------------------------\n");
