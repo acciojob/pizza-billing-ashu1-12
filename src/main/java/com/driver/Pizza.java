@@ -9,6 +9,13 @@ public class Pizza {
 
 	public Pizza(boolean isVeg) {
 		this.isVeg = isVeg;
+		if(isVeg) {
+			isToppingsAdded=70;
+		}else {
+			isCheeseAdded=80;
+		}
+		
+		isPaperBagAdded=20;
 	}
 
 	public void addExtraCheese() {
@@ -28,9 +35,9 @@ public class Pizza {
 	
 	public int getPrice() {
 		if(isVeg)
-			return 300;
+			return 300+isToppingsAdded+isPaperBagAdded;
 		else
-			return 400;
+			return 400+isCheeseAdded+isPaperBagAdded;
 	}
 
 	public String getBill() {
