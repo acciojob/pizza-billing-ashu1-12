@@ -22,23 +22,23 @@ public class Pizza {
 			this.isToppingsAdded = 120;
 	}
 
-	protected void addPaperBag() {
-		this.isPaperBagAdded += 20;
+	protected int addTakeaway() {
+		return this.isPaperBagAdded += 20;
 	}
 	
-	protected int getBasePrize() {
+	protected int getPrice() {
 		if(isVeg)
 			return 300;
 		else
 			return 400;
 	}
 
-	protected String generateBill() {
+	protected String getBill() {
 		this.totalPrice = 0;
 		StringBuffer bill = new StringBuffer();
 		//bill.append("------------------------------\n");
 		
-		int basePrize = getBasePrize();
+		int basePrize = getPrice();
 		bill.append("Base Price Of The Pizza: "+basePrize + "\n");
 		this.totalPrice += basePrize;
 		
