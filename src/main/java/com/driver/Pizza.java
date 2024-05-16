@@ -23,7 +23,7 @@ public class Pizza {
 	}
 
 	public int addTakeaway() {
-		return this.isPaperBagAdded += 20;
+		return this.isPaperBagAdded = 20;
 	}
 	
 	public int getPrice() {
