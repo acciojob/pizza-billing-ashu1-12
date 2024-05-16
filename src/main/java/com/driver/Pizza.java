@@ -2,17 +2,24 @@ package com.driver;
 
 public class Pizza {
 
-    private int price;
-    private boolean isVeg;
-    private int cheesePrice;
-    private int toppingPrice=0;
+    protected int price;
+    protected boolean isVeg;
+    protected int cheesePrice;
+    protected int toppingPrice;
+    protected int totalPrice;
+    protected int paperBagPrice;
+    protected String bill="";
 
-    private int totalPrice=0;
-    private int paperBagPrice=0;
-    private String bill="";
-
-
-    public Pizza(Boolean isVeg){
+    
+//    		Veg pizza base price = 300
+//    		Non-veg pizza base price = 400
+//    		Extra Cheese Price = 80
+//    		Extra Toppings For Veg Pizza = 70
+//    		Extra Toppings For Non-veg Pizza = 120
+//    		Paper bag Price = 20
+    
+    //constructor for normal pizza 
+    public Pizza(boolean isVeg){
         this.isVeg = isVeg;
         ///base price
         if(isVeg){
@@ -26,6 +33,20 @@ public class Pizza {
 
         // your code goes here
     }
+//    
+//  //constructor for DeluxePizza
+//    public Pizza(boolean isVeg,int extraCheese, int extraToppings) {
+//    	if(isVeg){
+//            price = 300;
+//            totalPrice+=300;
+//        }
+//        else{
+//            price = 400;
+//            totalPrice+=400;
+//        }
+//    	this.cheesePrice+=extraCheese;
+//    	this.toppingPrice+=extraToppings;
+//    }
 
     public int getPrice(){
         return this.price;
@@ -42,7 +63,7 @@ public class Pizza {
             toppingPrice+=70;
             totalPrice+=70;
         }
-        if(!isVeg){
+        else{
             toppingPrice+=120;
             totalPrice+=120;
         }
