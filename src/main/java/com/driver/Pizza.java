@@ -35,9 +35,9 @@ public class Pizza {
 	
 	public int getPrice() {
 		if(isVeg)
-			return 300+isToppingsAdded+isPaperBagAdded;
+			return 300+isToppingsAdded+isPaperBagAdded+isCheeseAdded;
 		else
-			return 400+isCheeseAdded+isPaperBagAdded;
+			return 400+isCheeseAdded+isPaperBagAdded+isToppingsAdded;
 	}
 
 	public String getBill() {
