@@ -6,55 +6,72 @@ public class Pizza {
 	private int isToppingsAdded;
 	private int isPaperBagAdded;
 	private int totalPrice;
+	private int basePrice;
 
 	public Pizza(boolean isVeg) {
 		this.isVeg = isVeg;
+		
+		if(isVeg) {
+			this.basePrice=300;
+			totalPrice+=basePrice;
+		}
+			
+		else {
+			this.basePrice=400;
+			totalPrice+=basePrice;
+		}
 	}
 
 	public void addExtraCheese() {
 		this.isCheeseAdded = 80;
+		totalPrice+=isCheeseAdded;
 	}
 
 	public void addExtraToppings() {
-		if (isVeg)
+		if (isVeg) {
 			this.isToppingsAdded = 70;
-		else
+			totalPrice+=isToppingsAdded;
+		}
+		else{
 			this.isToppingsAdded = 120;
+			totalPrice+=isToppingsAdded;
+			}
 	}
 
 	public int addTakeaway() {
-		return this.isPaperBagAdded = 20;
+		this.isPaperBagAdded = 20;
+		totalPrice+=isPaperBagAdded;
+		return isPaperBagAdded;
 	}
 	
 	public int getPrice() {
-		if(isVeg)
-			return 300;
-		else
-			return 400;
+		
+		return totalPrice;
+			
 	}
 
 	public String getBill() {
-		this.totalPrice = 0;
+		//this.totalPrice = 0;
 		StringBuffer bill = new StringBuffer();
 		//bill.append("------------------------------\n");
 		
-		int basePrize = getPrice();
-		bill.append("Base Price Of The Pizza: "+basePrize + "\n");
-		this.totalPrice += basePrize;
+		
+		bill.append("Base Price Of The Pizza: "+this.basePrice + "\n");
+		//this.totalPrice += basePrize;
 		
 		if (isCheeseAdded != 0) {
 			bill.append("Extra Cheese Added: " + isCheeseAdded + "\n");
-			this.totalPrice += isCheeseAdded;
+			//this.totalPrice += isCheeseAdded;
 		}
 		
 		if (isToppingsAdded != 0) {
 			bill.append("Extra Toppings Added: " + isToppingsAdded + "\n");
-			this.totalPrice += isToppingsAdded;
+			//this.totalPrice += isToppingsAdded;
 		}
 
 		if (isPaperBagAdded != 0) {
 			bill.append("Paperbag Added: " + isPaperBagAdded + "\n");
-			this.totalPrice += isPaperBagAdded;
+			//this.totalPrice += isPaperBagAdded;
 		}
 		
 		//bill.append("------------------------------\n");
