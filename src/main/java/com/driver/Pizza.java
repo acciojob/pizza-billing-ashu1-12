@@ -23,11 +23,14 @@ public class Pizza {
 	}
 
 	public void addExtraCheese() {
-		this.isCheeseAdded = 80;
-		totalPrice+=isCheeseAdded;
+		if(isCheeseAdded == 0) {	
+			this.isCheeseAdded = 80;
+			totalPrice+=isCheeseAdded;
+		}
 	}
 
 	public void addExtraToppings() {
+		if(isToppingsAdded == 0) {
 		if (isVeg) {
 			this.isToppingsAdded = 70;
 			totalPrice+=isToppingsAdded;
@@ -36,11 +39,14 @@ public class Pizza {
 			this.isToppingsAdded = 120;
 			totalPrice+=isToppingsAdded;
 			}
+		}
 	}
 
 	public int addTakeaway() {
-		this.isPaperBagAdded = 20;
-		totalPrice+=isPaperBagAdded;
+		if(isPaperBagAdded==0) {
+			this.isPaperBagAdded = 20;
+			totalPrice+=isPaperBagAdded;
+		}
 		return isPaperBagAdded;
 	}
 	
